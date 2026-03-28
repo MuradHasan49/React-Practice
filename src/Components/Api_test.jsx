@@ -11,7 +11,7 @@ const Api_test = ({ api }) => {
             {
                 Api_data.countries.map(item=> <div key={item.name.common}>
                     <div>
-                 <li>{item.name.common} Population is : {item.population.population}</li>
+                 <li>`{item.name.common} Population is : {item.population.population > 5000000 ?`${item.population.population} High ` : `${item.population.population} Low`}`</li>
                    <img  src={item.flags.flags.png}/> 
                     </div>
                 </div>
