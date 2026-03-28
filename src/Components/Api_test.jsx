@@ -1,6 +1,5 @@
 import React, { use } from 'react'
 
-
 const Api_test = ({ api }) => {
     const Api_data = use(api);
     console.log(Api_data.countries);
