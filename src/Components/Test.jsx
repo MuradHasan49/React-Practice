@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
+import Api_test from "./Api_test";
 
 const Test = ({ id }) => {
-    const handleClick = (para) => {
-        alert(`Button in Test component with ID ${Number(id) + Number(para)} clicked!`);
-    }
-    const [count, setCount] = useState(0);
+  const handleClick = (para) => {
+    alert(
+      `Button in Test component with ID ${Number(id) + Number(para)} clicked!`,
+    );
+  };
+  const [count, setCount] = useState(0);
 
-    const handleClick2 = ()=>{
-        setCount(count + 1);
-        console.log(`Count: ${count}`);
-    }
+  const handleClick2 = () => {
+    setCount(count + 1);
+    console.log(`Count: ${count}`);
+  };
+  const api = fetch("https://openapi.programming-hero.com/api/all").then(
+    (res) => res.json(),
+  );
 
   return (
     <>
@@ -26,8 +32,13 @@ const Test = ({ id }) => {
           perspiciatis excepturi expedita beatae?
         </p>
       </div>
-      <button onClick={()=> handleClick(20)}>Click Me</button>
+      <button onClick={() => handleClick(20)}>Click Me</button>
       <button onClick={handleClick2}>Click Me 2</button>
+
+      
+      <Suspense fallback={<div>Loading...</div>}>
+        <Api_test api={api} />
+      </Suspense>
     </>
   );
 };
