@@ -16,7 +16,7 @@ const Test = ({ id }) => {
       <div>
         <h1>Test Component</h1>
         <p>ID: {id}</p>
-        <p>{`Count: ${count <= 10 ? `${count} - hit the click me button 2 and get more!` : `${count} -clicked over 10!`}`}</p>
+        <p>{`Count: ${count <= 10 ? `${count} - hit the click me button 2 and get more!` : `${count} - licked Over Then 10!`}`}</p>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse illo
           eligendi quaerat consequatur at recusandae blanditiis tempora
